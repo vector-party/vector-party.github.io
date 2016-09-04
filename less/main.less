@@ -19,7 +19,28 @@ body {background-color:#EEE;z-index:-1;}
     left: 0;
     right: 0;
     z-index: 1;
-    h1 {font-size:14pt;color:@text-color;margin:0;position:fixed;left:10px; font-family: 'Architects Daughter', cursive;.no-select; float:left;}
+    h1 {font-size:14pt;color:@text-color;margin:0;position:fixed;left:10px; font-family: 'Architects Daughter', cursive;.no-select;z-index:2;}
+}
+
+#info-buttons {
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    right: 10px;
+    z-index:2;
+    text-align: center;
+    vertical-align: middle;
+    line-height:inherit;
+    color: @text-color;
+    height: inherit;
+    span{
+        width:inherit;height:inherit;line-height:inherit;
+        :hover{background-color:@accent-color;color:@text-color + #111;}
+        :active,:focus{background-color:@active-color;color:@text-color + #222;}
+        :active{cursor:progress;}
+    }
+    span,i{width:25px;}
+    .no-select;
 }
 
 .btn-holder-v {
