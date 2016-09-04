@@ -1,6 +1,10 @@
-@main-color: HSL(300,30%,30%);
+/*
+Created by Gwen Hope, 2016. MIT License.
+*/
+
+@main-color: hsl(300,30%,30%);
 @accent-color: (@main-color + @active-color) / 2;
-@active-color: HSL(300,30%,50%);
+@active-color: hsl(300,30%,50%);
 @text-color: #DDD;
 
 @import 'https://fonts.googleapis.com/css?family=Architects+Daughter';
@@ -33,6 +37,12 @@ body {background-color:#EEE;z-index:-1;}
     line-height:inherit;
     color: @text-color;
     height: inherit;
+    div {
+        width:inherit;height:inherit;line-height:inherit;display:inline;
+        :hover{background-color:@accent-color;color:@text-color + #111;}
+        :active,:focus{background-color:@active-color;color:@text-color + #222;}
+    }
+    div,i{width:25px;}
     span{
         width:inherit;height:inherit;line-height:inherit;
         :hover{background-color:@accent-color;color:@text-color + #111;}
@@ -42,6 +52,20 @@ body {background-color:#EEE;z-index:-1;}
     span,i{width:25px;}
     .no-select;
 }
+
+.info-dropdown {
+    z-index: 2;
+    background-color: @main-color;
+    display: none;
+    position: absolute;
+    top: 30px;
+    height:350px;
+    width:250px;
+    .box-shadow(0px,0px,5px,@accent-color);
+}
+
+#about-dialog{right:0px;}
+#help-dialog{right:28px;}
 
 .btn-holder-v {
     position: fixed;
@@ -64,7 +88,6 @@ body {background-color:#EEE;z-index:-1;}
     color: @text-color;
     :hover{background-color:@accent-color;color:@text-color + #111;}
     :active,:focus{background-color:@active-color;color:@text-color + #222;}
-    :active{cursor:progress;}
     span{vertical-align: middle; height:inherit; width:inherit; line-height:50px; display:inline-block;}
     i{height:inherit; width:inherit; display: inherit;}
 }
@@ -94,7 +117,6 @@ body {background-color:#EEE;z-index:-1;}
     color: @text-color;
     :hover{background-color:@accent-color;color:@text-color + #111;}
     :active,:focus{background-color:@active-color;color:@text-color + #222;}
-    :active{cursor:progress;}
     span{line-height:50px;display:inherit;vertical-align:inherit;height:inherit;width:inherit;}
     i{height:inherit;width:inherit;display:inherit;}
 }
@@ -120,6 +142,13 @@ body {background-color:#EEE;z-index:-1;}
     box-shadow: @x @y @b @c;
     -webkit-box-shadow: @x @y @b @c;
     -moz-box-shadow: @x @y @b @c;
+}
+
+.trans(@prop,@dura,@time,@delay) {
+    transition: @prop @dura @time @delay;
+    -webkit-transition: @prop @dura @time @delay;
+    -moz-transition: @prop @dura @time @delay;
+    -o-transition: @prop @dura @time @delay;
 }
 
 .no-select {

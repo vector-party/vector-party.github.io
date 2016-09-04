@@ -9,6 +9,7 @@
         <meta name="description" content="Vector.Party, the vector graphic design webapp suite. Free and open source.">
         <meta name="author" content="Gwen Hope">
         <meta name="keywords" content="vector,raster,graphic,webapp,open source,graphic design,design,foss">
+        <script type="text/javascript" src="js/main.js" async></script>
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css-reset.css">
@@ -19,8 +20,10 @@
         <div id="top-bar">
             <h1>vector.party</h1>
             <div id="info-buttons">
-                <span title="Help"><i class="fa fa-1x fa-fw fa-question-circle"></i></span>
-                <span title="About"><i class="fa fa-1x fa-fw fa-info-circle"></i></span>
+                <div id="help-button" title="Help"><i class="fa fa-fw fa-question-circle"></i></div>
+                <div id="about-button" title="About"><i class="fa  fa-fw fa-info-circle"></i></div>
+                <section id="about-dialog" class="info-dropdown"></section>
+                <section id="help-dialog" class="info-dropdown"></section>
             </div>
         </div>
         <div class="btn-holder-v">
