@@ -1,0 +1,117 @@
+@main-color: HSL(300,30%,30%);
+@accent-color: (@main-color + @active-color) / 2;
+@active-color: HSL(300,30%,50%);
+@text-color: #DDD;
+
+@import 'https://fonts.googleapis.com/css?family=Architects+Daughter';
+
+html{min-width:500px; min-height:400px;}
+
+body {background-color:#EEE;z-index:-1;}
+
+#top-bar {
+    background-color: @main-color;
+    .box-shadow(0px,0px,5px,@accent-color);
+    height: 25px;
+    line-height: 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    h1 {font-size:14pt;color:@text-color;margin:0;position:fixed;left:10px; font-family: 'Architects Daughter', cursive;.no-select; float:left;}
+}
+
+.btn-holder-v {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 10%;
+    background-color: @main-color;
+    .box-shadow(0px,0px,10px,@accent-color);
+    .rounded(3px);
+    :hover,:active,:focus{.rounded(3px);}
+}
+
+.btn-holder-v div {
+    z-index: 2;
+    border-bottom: 1px solid #222;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+    color: @text-color;
+    :hover{background-color:@accent-color;color:@text-color + #111;}
+    :active,:focus{background-color:@active-color;color:@text-color + #222;}
+    :active{cursor:progress;}
+    span{vertical-align: middle; height:inherit; width:inherit; line-height:50px; display:inline-block;}
+    i{height:inherit; width:inherit; display: inherit;}
+}
+
+.btn-holder-h {
+    position: fixed;
+    min-width:255px;
+    z-index: 1;
+    bottom: 0;
+    right: 5%;
+    background-color: @main-color;
+    .box-shadow(0px,0px,10px,@accent-color);
+    .rounded(3px);
+    :hover,:active,:focus{.rounded(3px);}
+}
+
+.btn-holder-h div {
+    z-index: 2;
+    position: relative;
+    border-right: 1px solid #222;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    color: @text-color;
+    :hover{background-color:@accent-color;color:@text-color + #111;}
+    :active,:focus{background-color:@active-color;color:@text-color + #222;}
+    :active{cursor:progress;}
+    span{line-height:50px;display:inherit;vertical-align:inherit;height:inherit;width:inherit;}
+    i{height:inherit;width:inherit;display:inherit;}
+}
+
+#page {
+    z-index:0;
+    background-color: white;
+    position: relative;
+    width: 772px;
+    height: 1000px;
+    margin: 75px auto;
+    .box-shadow(4px,4px,6px,grey);
+}
+
+.rounded(@n) {
+    border-radius: @n;
+    -webkit-border-radius: @n;
+    -moz-border-radius: @n;
+    -o-border-radius: @n;
+}
+
+.box-shadow(@x,@y,@b,@c) {
+    box-shadow: @x @y @b @c;
+    -webkit-box-shadow: @x @y @b @c;
+    -moz-box-shadow: @x @y @b @c;
+}
+
+.no-select {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    cursor: default;
+}
+
+.disabled {
+    background-color: grey;
+    color: lightgrey;
+    cursor: not-allowed;
+    :hover,:active,:focus,span,i,span:hover,i:hover,span:active,i:active,span:focus,i:focus{background-color:grey; color:lightgrey; cursor:not-allowed;}
+}
